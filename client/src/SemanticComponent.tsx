@@ -22,17 +22,17 @@ function SemanticComponent({image, image_masks, list_of_symbols, nameFile}: {ima
     const maskUrl = image_masks.map(item => getImage(item))
 
     return (
-        <div className="w-full p-[40px] bg-white rounded shadow-lg">
+        <div className="w-full p-4 lg:p-12 bg-white rounded shadow-[0_2px_8px_rgba(0,0,0,0.25)]">
             <span className="font-bold font-sans text-4xl">{nameFile}</span>
-            <div className="mt-8 grid gap-2.5 grid grid-cols-3  w-[85%]">
+            <div className="w-full mt-8 grid grid-cols-1 xs:grid-cols-3 gap-2.5 ">
                 {maskUrl.map((item, index) =>
                     <Fragment key={index}>
-                        <img src={ imageUrl } className="shadow-lg" alt="canvas" />
+                        <img src={ imageUrl } className="shadow-lg hidden xs:block" alt="canvas" />
                         <div className="relative">
-                            <img src={ imageUrl } className="shadow-lg" alt="canvas" />
-                            <img src={ item } className="shadow-lg absolute top-0 left-0 opacity-70" alt="mask" />
+                            <img src={ imageUrl } className="shadow-lg w-full lg:w-auto" alt="canvas" />
+                            <img src={ item } className="shadow-lg w-full lg:w-auto absolute top-0 left-0 opacity-70" alt="mask" />
                         </div>
-                        <img src={ item } className="shadow-lg" alt="mask" />
+                        <img src={ item } className="shadow-lg hidden xs:block" alt="mask" />   
                     </Fragment>
                 )}
             </div>
@@ -44,7 +44,7 @@ function SemanticComponent({image, image_masks, list_of_symbols, nameFile}: {ima
                             <div className="w-[10px] h-[10px] ml-1" style={{backgroundColor: `rgb(${item.color[0]}, ${item.color[1]}, ${item.color[2]})`}}></div>
                         </div>
                         <ul className="list-disc pl-6">
-                            {item.semantic.split('; ').map((item, index) => <li key={index}>{item}</li>)}
+                            {item.semantic.split('; ').map((item, index) => <li key={index} className="text-start">{item}</li>)}
                         </ul>
                     </Fragment>
                 )}

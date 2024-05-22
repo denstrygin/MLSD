@@ -10,7 +10,7 @@ function ImagesPage() {
     const {clearState} = dragEventSlice.actions
 
     return (
-        <div className='flex flex-col h-[90%] w-full items-center bg-gray-light overflow-y-auto scrollbar'>
+        <div className='flex flex-col w-full h-full items-center'>
             {isLoading
                 ? <div className="w-full h-full flex justify-center items-center"><img src={require('./img/loading.gif')} alt="загрузка..." /></div>
                 : !error 

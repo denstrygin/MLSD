@@ -18,7 +18,7 @@ function DropBoxModel({idKey, header, imgUrl, altImg}: {idKey: number, header: s
     }
 
     return (
-        <div className="flex flex-col items-center w-[30%] bg-white rounded shadow-lg p-4">
+        <div className="flex flex-col shrink items-center bg-white rounded shadow-[0_2px_8px_rgba(0,0,0,0.25)] p-4">
             <div className='flex items-baseline'>
                 <span className="font-bold text-2xl">{header}</span>
                 <img className='ml-[10px] w-[20px] h-[20px] cursor-pointer' onClick={e => fetchOrVisible()} src={require('./img/question.png')} alt="?" />

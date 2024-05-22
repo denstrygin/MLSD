@@ -19,6 +19,9 @@ module.exports = {
         ice: '#FCFCFC',
         red: '#FF0000',
       },
+      screens: {
+        'xs': '500px',
+      },
     },
   },
   plugins: [],

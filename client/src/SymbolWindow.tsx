@@ -8,7 +8,7 @@ function SymbolWindow() {
     const {visible, isLoading, data, error} = useAppSelector(state => state.questionEventSlice)
     const {setVisible} = questionEventSlice.actions;
     const dispatch = useAppDispatch()
-    let animationClasses: string = 'transAddition flex flex-col top-[20%] right-[-40vh] h-[50vh] w-[40vh] absolute bg-white shadow-lg z-10 rounded-l p-4 border-2 border-r-0 border-gray-dark'
+    let animationClasses: string = 'transAddition flex flex-col top-[20%] right-[-250px] h-[50vh] w-[250px] fixed bg-white shadow-lg z-10 rounded-l p-4 border-2 border-r-0 border-gray-dark'
     visible && (animationClasses += ' animModalWindow')
 
     return (
@@ -22,7 +22,7 @@ function SymbolWindow() {
                         : data.map((item, index) =>
                             <Fragment key={index}>
                                 <span className="text-sm font-bold">{item.name}</span>
-                                <ul className="list-disc pl-6">
+                                <ul className="list-disc pl-6 text-start">
                                     {item.symbols.map((symbol, index) => <li key={index} className="text-sm">{symbol}</li>)}
                                 </ul>
                             </Fragment>
